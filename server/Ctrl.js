@@ -88,6 +88,7 @@ module.exports = {
       res.send(levelID);
     }catch(error){
       console.log(error)
+      console.log(error)
     }
   },
   levelBySeller: async (req, res)=>{
