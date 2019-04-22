@@ -1,0 +1,72 @@
+//seller//
+create table seller (
+user_id serial primary key,
+username varchar(50) not null unique,
+email varchar(100) not null unique,
+password varchar not null,
+first_name varchar(100) not null,
+last_name varchar(100) not null
+)
+
+select all from user where user_id = $1;
+
+//CONTACT//
+
+create table contact(
+contact_id serial primary key,
+seller_id integer references seller(seller_id),
+contact_first_name varchar,
+contact_last_name varchar,
+job_title varchar,
+company_name varchar,
+website varchar,
+email varchar,
+mobile_phone varchar,
+work_phone varchar,
+Street1 varchar,
+Street2 varchar,
+City text,
+State text,
+zipcode int,
+birthday varchar,
+last_contact varchar,
+past_due int,
+follow_up_date varchar,
+stage_level int,
+priority int
+)
+
+
+initial pyramid
+select first_name, last_name, company from contact where user = $1;
+
+
+grab contact info
+select * from contact where salesperson_id = $1;
+
+///////////////
+////IDEAS//
+//////////////
+
+create table level (
+    level_id serial primary key,
+    seller_id integer references seller(seller_id),
+    level_name varchar,
+    days_between_steps int
+)
+create table steps(
+    steps_id serial primary key,
+    level_id integer references level(level_id),
+    step_name varchar
+)
+
+create table action(
+    action_id serial primary key,
+    level_id integer references level(level_id),
+    seller_id  integer references seller(seller_id),
+    contact_id  integer references contact(contact_id),
+    follow_up_date varchar,
+    priority int,
+    description varchar
+)
+

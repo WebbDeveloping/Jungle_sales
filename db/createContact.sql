@@ -1,0 +1,30 @@
+insert into contact(
+seller_id,
+contact_first_name,
+contact_last_name,
+job_title,
+company_name,
+website,
+email,
+mobile_phone,
+work_phone,
+Street1,
+Street2,
+City,
+State,
+zipcode,
+birthday,
+last_contact,
+past_due,
+follow_up_date,
+stage_level,
+priority
+) values (
+$1,
+$2,
+$3,
+$4,
+$5,
+$6,
+$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19
+)

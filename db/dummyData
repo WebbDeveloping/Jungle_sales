@@ -1,0 +1,101 @@
+//Create Seller//
+insert into seller (
+username,
+email,
+password,
+first_name,
+last_name
+) values (
+'username',
+'email',
+'password',
+'first',
+'last'
+)
+
+//Create Contact//
+
+insert into contact(
+seller_id,
+contact_first_name,
+contact_last_name,
+job_title,
+company_name,
+website,
+email,
+mobile_phone,
+work_phone,
+Street1,
+Street2,
+City,
+State,
+zipcode,
+birthday,
+last_contact,
+past_due,
+follow_up_date,
+stage_level
+) values (
+1,
+'Matt',
+'Webb',
+'Tech',
+'WebbProduction',
+'WeAreWebb.com',
+'Matt@webb.com',
+'8017657637',
+'9812343212',
+'630 e wood',
+'45 s 500 e',
+'Holladay',
+'Utah',
+'84124',
+'12-24-96',
+'04-1-19',
+1,
+'April 17th 2019',
+1
+)
+
+
+//LEVELS//
+
+insert into level(
+    seller_id,
+    level_name,
+    days_between_steps int
+) values (
+    1,
+    'messsage 2 message',
+    3
+)
+
+//Steps//
+insert into steps(
+    level_id,
+    step_name,
+    days_between_steps
+) values (
+    1,
+    'intro vm/email'
+)
+
+
+//Action//
+
+//more actions//
+insert into action(
+    level_id,
+    seller_id,
+    contact_id,
+    follow_up_date,
+    priority,
+    description
+) values (
+    4,
+    1,
+    2,
+    'April 22, 2019',
+    10,
+    'description for Proposal under Matt'
+)
