@@ -3,6 +3,7 @@ const express = require('express');
 const massive = require('massive');
 const bodyParser = require('body-parser');
 const Ctrl = require('./Ctrl');
+const cc = require('./CreateController');
 //test
 const app = express();
 
@@ -19,7 +20,14 @@ massive(CONNECTION_STRING).then(db => {
 
 app.get(`/api/getSeller`, Ctrl.getSeller);
 app.get(`/api/getContact/:id`, Ctrl.getContact);
+app.get(`/api/getContactBySeller/:id`, Ctrl.getContactBySeller);
 app.get(`/api/shortContact/:id`, Ctrl.shortContact);
 app.get(`/api/getLevelByLevel/:id`, Ctrl.levelByLevel)
 app.get(`/api/getLevelBySeller/:id`, Ctrl.levelBySeller)
-app.post(`/api/createContact/:id`, Ctrl.createContact);
+
+//create
+app.post(`/api/createContact/:id`, cc.createContact);
+app.post(`/api/createAction`, cc.createAction)
+app.post(`/api/createLevel`, cc.createLevel)
+app.post(`/api/createStep`, cc.createStep)
+
