@@ -1,6 +1,7 @@
 select 
 action_id,	
 contact_id,	
+contact_uuid,
 follow_up_date,	
 priority,	
 description,
