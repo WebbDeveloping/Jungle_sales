@@ -3,9 +3,18 @@ const express = require('express');
 const massive = require('massive');
 const bodyParser = require('body-parser');
 const Ctrl = require('./Ctrl');
+const Cu = require('./Ctrl_uuid');
 const cc = require('./CreateController');
 //test
 const app = express();
+//USE THIS TO SECURE END POINTS
+// app.use(function(req, res, next) {
+//   console.log('subdomain', req.subdomains);
+//   if (!req.subdomains.includes('http://206.189.218.159:4139')) {
+//     return res.sendStatus(403);
+//   }
+//   return next();
+// });
 
 const { SERVER_PORT, CONNECTION_STRING } = process.env;
 app.use(bodyParser.json());
@@ -22,10 +31,12 @@ app.get(`/api/getSeller`, Ctrl.getSeller);
 app.get(`/api/getContact/:id`, Ctrl.getContact);
 app.get(`/api/getContactBySeller/:id`, Ctrl.getContactBySeller);
 app.get(`/api/shortContact/:id`, Ctrl.shortContact);
-app.get(`/api/getLevelByLevel/:id`, Ctrl.levelByLevel);
+app.get(`/api/getLevelBySellerId/:id`, Ctrl.levelByLevel);
 app.get(`/api/getLevelBySeller/:id`, Ctrl.levelBySeller);
-//
 app.get('/api/getActionByContact/:id', Ctrl.getActionByContact);
+app.get('/api/getActionContact/:contact_id', Ctrl.getActionForContact);
+//UUID
+app.get('/api/getActionByContactUuid', Cu.getActionByContactUuid);
 
 //create
 app.post(`/api/createContact/:id`, cc.createContact);

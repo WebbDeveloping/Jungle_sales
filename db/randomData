@@ -1,0 +1,275 @@
+http://localhost:4139/api/getLevelBySellerId/seller_id (1)
+[
+    {
+        "level_id": 1,
+        "level_name": "messsage 2 message",
+        "days_between_steps": 0,
+        "level_uuid": null,
+        "stepNames": [
+            {
+                "steps_id": 1,
+                "step_name": "intro vm/email",
+                "step_uuid": null
+            },
+            {
+                "steps_id": 2,
+                "step_name": "follow up",
+                "step_uuid": null
+            },
+            {
+                "steps_id": 3,
+                "step_name": "final email",
+                "step_uuid": null
+            }
+        ],
+        "actions": [
+            {
+                "action_id": 5,
+                "contact_id": 3,
+                "contact_uuid": null,
+                "follow_up_date": "April 22, 2019",
+                "priority": 10,
+                "description": "description for m2m under Ryan",
+                "action_uuid": null
+            },
+            {
+                "action_id": 9,
+                "contact_id": 2,
+                "contact_uuid": null,
+                "follow_up_date": "April 22, 2019",
+                "priority": 10,
+                "description": "description for m2m under matt",
+                "action_uuid": null
+            }
+        ]
+    },
+    {
+        "level_id": 2,
+        "level_name": "voice 2 voice",
+        "days_between_steps": 0,
+        "level_uuid": null,
+        "stepNames": [
+            {
+                "steps_id": 4,
+                "step_name": "initial v2v",
+                "step_uuid": null
+            },
+            {
+                "steps_id": 5,
+                "step_name": "ask to visit",
+                "step_uuid": null
+            }
+        ],
+        "actions": [
+            {
+                "action_id": 4,
+                "contact_id": 3,
+                "contact_uuid": null,
+                "follow_up_date": "April 22, 2019",
+                "priority": 10,
+                "description": "description for V2V under Ryan",
+                "action_uuid": null
+            },
+            {
+                "action_id": 6,
+                "contact_id": 3,
+                "contact_uuid": null,
+                "follow_up_date": "April 22, 2019",
+                "priority": 10,
+                "description": "description for v2v under Ryan",
+                "action_uuid": null
+            },
+            {
+                "action_id": 7,
+                "contact_id": 1,
+                "contact_uuid": null,
+                "follow_up_date": "April 22, 2019",
+                "priority": 10,
+                "description": "description for v2v under chloe",
+                "action_uuid": null
+            },
+            {
+                "action_id": 8,
+                "contact_id": 2,
+                "contact_uuid": null,
+                "follow_up_date": "April 22, 2019",
+                "priority": 10,
+                "description": "description for v2v under matt",
+                "action_uuid": null
+            }
+        ]
+    },
+    {
+        "level_id": 3,
+        "level_name": "face 2 face",
+        "days_between_steps": 0,
+        "level_uuid": null,
+        "stepNames": [
+            {
+                "steps_id": 6,
+                "step_name": "meeting set",
+                "step_uuid": null
+            },
+            {
+                "steps_id": 7,
+                "step_name": "ask send prop",
+                "step_uuid": null
+            }
+        ],
+        "actions": []
+    },
+    {
+        "level_id": 4,
+        "level_name": "proposal",
+        "days_between_steps": 0,
+        "level_uuid": null,
+        "stepNames": [
+            {
+                "steps_id": 8,
+                "step_name": "proposal sent",
+                "step_uuid": null
+            },
+            {
+                "steps_id": 9,
+                "step_name": "follow up",
+                "step_uuid": null
+            }
+        ],
+        "actions": [
+            {
+                "action_id": 1,
+                "contact_id": 2,
+                "contact_uuid": null,
+                "follow_up_date": "April 22, 2019",
+                "priority": 10,
+                "description": "description for Proposal under Matt",
+                "action_uuid": null
+            },
+            {
+                "action_id": 2,
+                "contact_id": 1,
+                "contact_uuid": null,
+                "follow_up_date": "April 22, 2019",
+                "priority": 10,
+                "description": "description for Proposal under CHloe",
+                "action_uuid": null
+            },
+            {
+                "action_id": 3,
+                "contact_id": 3,
+                "contact_uuid": null,
+                "follow_up_date": "April 22, 2019",
+                "priority": 10,
+                "description": "description for Proposal under Ryan",
+                "action_uuid": null
+            }
+        ]
+    },
+    {
+        "level_id": 5,
+        "level_name": "contact",
+        "days_between_steps": 0,
+        "level_uuid": null,
+        "stepNames": [
+            {
+                "steps_id": 10,
+                "step_name": "contract received",
+                "step_uuid": null
+            },
+            {
+                "steps_id": 11,
+                "step_name": "quarerly follow up",
+                "step_uuid": null
+            },
+            {
+                "steps_id": 12,
+                "step_name": "contract term ends",
+                "step_uuid": null
+            }
+        ],
+        "actions": [
+            {
+                "action_id": 10,
+                "contact_id": 2,
+                "contact_uuid": null,
+                "follow_up_date": "April 22, 2019",
+                "priority": 10,
+                "description": "description for contract under matt",
+                "action_uuid": null
+            }
+        ]
+    }
+]
+http://localhost:4139/api/getActionContact/contact_id (2)
+[
+    {
+        "contact_id": 2,
+        "seller_id": 1,
+        "contact_first_name": "Matt",
+        "contact_last_name": "Webb",
+        "job_title": "Tech",
+        "company_name": "WebbProduction",
+        "website": "WeAreWebb.com",
+        "email": "Matt@webb.com",
+        "mobile_phone": "8017657637",
+        "work_phone": "9812343212",
+        "street1": "630 e wood",
+        "street2": "45 s 500 e",
+        "city": "Holladay",
+        "state": "Utah",
+        "zipcode": 84124,
+        "birthday": "12-24-96",
+        "last_contact": "04-1-19",
+        "past_due": 1,
+        "follow_up_date": "April 17th 2019",
+        "stage_level": 1,
+        "priority": null,
+        "contact_uuid": null,
+        "actions": [
+            {
+                "action_id": 1,
+                "level_id": 4,
+                "seller_id": 1,
+                "contact_id": 2,
+                "follow_up_date": "April 22, 2019",
+                "priority": 10,
+                "description": "description for Proposal under Matt",
+                "action_uuid": null,
+                "contact_uuid": null
+            },
+            {
+                "action_id": 8,
+                "level_id": 2,
+                "seller_id": 1,
+                "contact_id": 2,
+                "follow_up_date": "April 22, 2019",
+                "priority": 10,
+                "description": "description for v2v under matt",
+                "action_uuid": null,
+                "contact_uuid": null
+            },
+            {
+                "action_id": 9,
+                "level_id": 1,
+                "seller_id": 1,
+                "contact_id": 2,
+                "follow_up_date": "April 22, 2019",
+                "priority": 10,
+                "description": "description for m2m under matt",
+                "action_uuid": null,
+                "contact_uuid": null
+            },
+            {
+                "action_id": 10,
+                "level_id": 5,
+                "seller_id": 1,
+                "contact_id": 2,
+                "follow_up_date": "April 22, 2019",
+                "priority": 10,
+                "description": "description for contract under matt",
+                "action_uuid": null,
+                "contact_uuid": null
+            }
+        ]
+    }
+]

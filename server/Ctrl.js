@@ -57,7 +57,7 @@ module.exports = {
         level.actions = getActions;
         levelArr.push(level);
       }
-      console.log(levelArr);
+      // console.log(levelArr);
       res.send(levelArr).status(200);
     } catch (error) {
       console.log(error);
@@ -81,6 +81,24 @@ module.exports = {
       const db = req.app.get('db');
       const actions = await db.getActionByContact(id);
       res.send(actions).status(200);
+    } catch (error) {
+      console.log(error);
+      res.status(500).send(error);
+    }
+  },
+  getActionForContact: async (req, res) => {
+    let { contact_id } = req.params;
+    try {
+      const db = req.app.get('db');
+      const contactInfo = await db.getContact(contact_id);
+      let arr = [];
+      for (let i = 0; i < contactInfo.length; i++) {
+        let contact = contactInfo[i];
+        let getAction = await db.getActionByContact(contact.contact_id);
+        contact.actions = getAction;
+        arr.push(contact);
+      }
+      res.send(arr);
     } catch (error) {
       console.log(error);
       res.status(500).send(error);

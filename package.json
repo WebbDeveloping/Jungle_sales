@@ -2,6 +2,8 @@
   "name": "node-assessment-in-dev",
   "version": "1.0.0",
   "description": "### Setup",
+  "private": true,
+  "proxy": "http://localhost:4139",
   "main": "server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,6 +19,8 @@
   },
   "homepage": "https://github.com/DevMountain/node-assessment-in-dev#readme",
   "dependencies": {
+    "axios": "^0.18.0",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.1",
     "dotenv": "^7.0.0",
     "express": "^4.15.2",
