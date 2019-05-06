@@ -3,7 +3,7 @@ level_id,
 seller_id,
 level_name,
 days_between_steps,
-uuid
+level_uuid
 ) values (
     $1,
     $2,

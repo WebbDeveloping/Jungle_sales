@@ -19,7 +19,7 @@ past_due,
 follow_up_date,
 stage_level,
 priority,
-uuid
+contact_uuid
 ) values (
 $1,
 $2,

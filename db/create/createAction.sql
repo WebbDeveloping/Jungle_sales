@@ -3,10 +3,11 @@ insert into action(
     level_id,	
     seller_id,
     contact_id,
+    contact_uuid,
     follow_up_date,	
     priority,
     description,
-    uuid
+    action_uuid
 ) values (
     $1,
     $2,
@@ -15,5 +16,6 @@ insert into action(
     $5,
     $6,
     $7,
-    $8
+    $8,
+    $9
 )
