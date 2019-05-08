@@ -14,12 +14,12 @@ City,
 State,
 zipcode,
 birthday,
-last_contact,
-past_due,
-follow_up_date,
-stage_level,
-priority,
-contact_uuid
+contact_uuid,
+linkedIn,
+facebook,
+twitter,
+instagram,
+work_phone_extension
 ) values (
 $1,
 $2,
@@ -40,5 +40,6 @@ $16,
 $17,
 $18,
 $19,
-$20
+$20,
+$21
 )

@@ -1,0 +1,1 @@
+select * from seller where username = $1 or email = $1;
