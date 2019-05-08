@@ -650,27 +650,6 @@ module.exports = {
     console.log('hit');
     try {
       let { id } = req.params;
-      // let {
-      //   contact_first_name,
-      //   contact_last_name,
-      //   job_title,
-      //   company_name,
-      //   website,
-      //   email,
-      //   mobile_phone,
-      //   work_phone,
-      //   Street1,
-      //   Street2,
-      //   City,
-      //   State,
-      //   zipcode,
-      //   birthday,
-      //   last_contact,
-      //   past_due,
-      //   follow_up_date,
-      //   stage_level,
-      //   priority
-      // } = req.body;
       let {
         linkedIn,
         street2,
@@ -728,6 +707,67 @@ module.exports = {
     } catch (error) {
       res.status(500).send(error);
       console.log(error);
+    }
+  },
+  postContactList: async (req, res) => {
+    let { id } = req.params;
+    try {
+      const db = req.app.get('db');
+      const cList = [];
+      req.body.forEach((val, i, self) => {
+        const {
+          firstName,
+          lastName,
+          jobTitle,
+          company,
+          website,
+          email,
+          mobilePhone,
+          workPhone,
+          street1,
+          street2,
+          city,
+          state,
+          zip,
+          birthday,
+          contactID,
+          linkedIn,
+          facebook,
+          twitter,
+          instagram,
+          workPhoneExtension
+        } = val;
+        const newContact = db.create.createContact(
+          id,
+          firstName,
+          lastName,
+          jobTitle,
+          company,
+          website,
+          email,
+          mobilePhone,
+          workPhone,
+          street1,
+          street2,
+          city,
+          state,
+          zip,
+          birthday,
+          contactID,
+          linkedIn,
+          facebook,
+          twitter,
+          instagram,
+          workPhoneExtension
+          // notes,
+          // actions,
+        );
+        cList.push(newContact);
+      });
+      res.send(cList).status(200);
+    } catch (error) {
+      console.log(error);
+      res.status(500).send(error);
     }
   },
   createAction: async (req, res) => {
