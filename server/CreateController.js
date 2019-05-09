@@ -673,7 +673,7 @@ module.exports = {
         actions,
         street1,
         lastName
-      } = req.body.contact;
+      } = req.httpBody.contact;
       const db = req.app.get('db');
       // console.log(req.body.contact);
       // console.log(id);
