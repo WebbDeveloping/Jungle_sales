@@ -647,7 +647,7 @@ module.exports = {
     }
   },
   createContact: async (req, res) => {
-    console.log('hit');
+    // console.log('hit');
     try {
       let { id } = req.params;
       let {
@@ -673,7 +673,7 @@ module.exports = {
         actions,
         street1,
         lastName
-      } = req.httpBody.contact;
+      } = req.body.contact;
       const db = req.app.get('db');
       // console.log(req.body.contact);
       // console.log(id);
