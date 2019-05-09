@@ -1,6 +1,6 @@
 require('dotenv').config();
 const express = require('express');
-const session = require('express-session');
+// const session = require('express-session');
 const massive = require('massive');
 const bodyParser = require('body-parser');
 const Ctrl = require('./Ctrl');
@@ -17,15 +17,15 @@ const app = express();
 //   }
 //   return next();
 // });
-const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
+const { SERVER_PORT, CONNECTION_STRING } = process.env;
 app.use(bodyParser.json());
-app.use(
-  session({
-    secret: SESSION_SECRET,
-    resave: false,
-    saveUninitialized: true
-  })
-);
+// app.use(
+//   session({
+//     secret: SESSION_SECRET,
+//     resave: false,
+//     saveUninitialized: true
+//   })
+// );
 
 massive(CONNECTION_STRING).then(db => {
   app.set('db', db);
