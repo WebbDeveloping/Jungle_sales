@@ -737,7 +737,7 @@ module.exports = {
           instagram,
           workPhoneExtension
         } = val;
-        const newContact = db.create.createContact(
+        const newContact = db.create.createContactList(
           id,
           firstName,
           lastName,
