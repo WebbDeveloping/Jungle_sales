@@ -673,10 +673,10 @@ module.exports = {
         actions,
         street1,
         lastName
-      } = req.body;
+      } = req.body.contact;
       const db = req.app.get('db');
-      console.log(req.body);
-      console.log(id);
+      // console.log(req.body.contact);
+      // console.log(id);
       const newContact = await db.create.createContact(
         id,
         firstName,
@@ -702,7 +702,7 @@ module.exports = {
         // notes,
         // actions,
       );
-      console.log(newContact);
+      // console.log(newContact);
       res.send(newContact).status(200);
     } catch (error) {
       res.status(500).send(error);

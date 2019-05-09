@@ -108,6 +108,7 @@ module.exports = {
 
 // GetLevelByLevel Endpoint
 // 	http://206.189.218.159:4139/api/getLevelByLevel/1
+// 	http://206.189.218.159:4139/api/createContact/3
 // 	if we could make the /:id be a /:uuid
 
 // GetContactByAction/:uuid

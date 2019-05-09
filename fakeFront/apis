@@ -1,0 +1,39 @@
+// app.post(`http://206.189.218.159:4139/api/createContact/${id}`, cc.postContact)
+
+
+axios.post(`http://206.189.218.159:4139/api/createContact/${id}`, {
+  "linkedIn" : "kdkjd",
+  "street2" : "123",
+  "zip" : "85797",
+  "birthday" : "3\/11\/01",
+  "workPhoneExtension" : "1213",
+  "company" : "company ",
+  "contactID" : "30DEC401-ED6E-4CD6-8613-A977B06E1A2C",
+  "facebook" : "kfodjjd",
+  "city" : "Ommm",
+  "mobilePhone" : "5464313648",
+  "twitter" : "kekfj",
+  "state" : "UTAH",
+  "website" : "Shias.com",
+  "email" : "jsksbxjdjd@jdksksosis.com",
+  "jobTitle" : "Title",
+  "firstName" : "Test",
+  "instagram" : "iroeijdjs",
+  "workPhone" : "444555566646",
+  "notes" : [
+
+  ],
+  "actions" : [
+    {
+      "contactID" : "30DEC401-ED6E-4CD6-8613-A977B06E1A2C",
+      "followupDate" : 1558017974,
+      "description" : "  Send first message",
+      "levelID" : "41D84EF3-3394-48C5-A811-A6343EAB3D7E",
+      "priority" : 3
+    }
+  ],
+  "street1" : "127 h 9873 k",
+  "lastName" : "Once"
+}).then(res=>{
+    console.log(res.data)
+})
