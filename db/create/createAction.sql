@@ -1,5 +1,4 @@
 insert into action(
-    action_id,
     level_id,	
     seller_id,
     contact_id,
@@ -16,6 +15,6 @@ insert into action(
     $5,
     $6,
     $7,
-    $8,
-    $9
+    $8
 )
+returning *;
