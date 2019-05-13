@@ -1,28 +1,32 @@
-{
-  "linkedIn" : "",
-  "street2" : "Floor 3",
-  "zip" : "88888",
-  "birthday" : "010203",
-  "workPhoneExtension" : "",
-  "company" : "TyndaleApps",
-  "contactID" : "2A6FD95F-9C00-4936-B926-E851745A7828",
-  "facebook" : "",
-  "city" : "Lehi",
-  "mobilePhone" : "3335559999",
-  "twitter" : "",
-  "state" : "UT",
-  "website" : "",
-  "email" : "arkin.hill@tyndaleapps.com",
-  "jobTitle" : "Boss",
-  "firstName" : "Arkin",
-  "instagram" : "",
-  "workPhone" : "2224448888",
-  "notes" : [
-
-  ],
+{"contact":{
+  "linkedIn": null,
+  "street2": "Floor 3",
+  "zip": "88888",
+  "birthday": "010203",
+  "workPhoneExtension": null,
+  "company": "TyndaleApps",
+  "contactID": "2A6FD95F-9C00-4936-B926-E851745A7828",
+  "facebook": null,
+  "city": "Lehi",
+  "mobilePhone": "3335559999",
+  "twitter": null,
+  "state": "UT",
+  "website": null,
+  "email": "arkin.hill@tyndaleapps.com",
+  "jobTitle": "Boss",
+  "firstName": "Joe-shmo",
+  "instagram": null,
+  "workPhone": "2224448888",
+  "notes": [],
   "actions" : [
-
-  ],
-  "street1" : "123 Dev 456 Mountain",
-  "lastName" : "Hill"
-}
+      {
+        "contactID" : "2A6FD95F-9C00-4936-B926-E851745A7828",
+        "followupDate" : 1557783775,
+        "description" : "Send a message",
+        "levelID" : "599E96F8-C0CA-4ED9-992A-13F51DD38765",
+        "priority" : 0
+      }
+    ],
+  "street1": "123 Dev 456 Mountain",
+  "lastName": "Dirtt"
+}}

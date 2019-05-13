@@ -1,4 +1,4 @@
-[
+{"levels":[
   {
     "daysBetweenSteps" : 7,
     "stepNames" : [
@@ -114,3 +114,4 @@
     "levelID" : "9C146360-9416-45F8-A12C-8DB7500188BD"
   }
 ]
+}

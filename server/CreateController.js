@@ -28,6 +28,7 @@ module.exports = {
     console.log('level hit');
     let { id } = req.params;
     try {
+      let anArray = [];
       const db = req.app.get('db');
       res.set('Content-Type', 'application/json');
       req.body.levels.forEach((val, i, self) => {
@@ -39,20 +40,22 @@ module.exports = {
           daysBetweenSteps,
           levelID
         );
+        anArray.push(level);
         // console.log('level', level);
         val.stepNames.forEach((v, index, self) => {
           const { name } = v;
           const steps = db.create.createSteps(null, name, null, levelID);
+          anArray.push(steps);
         });
       });
-      res.send(level).status(200);
+      res.send(anArray).status(200);
     } catch (error) {
       res.status(500).send(error);
       console.log(error);
     }
   },
   createContact: async (req, res) => {
-    console.log(req);
+    // console.log(req);
     try {
       let { id } = req.params;
       res.set('Content-Type', 'application/json');
@@ -107,6 +110,23 @@ module.exports = {
         // notes,
         // actions,
       );
+      actions.forEach((v, index, arr) => {
+        db.create.createAction(
+          null,
+          // v.levelID,
+          // seller id
+          id,
+          //contact id
+          newContact.contactID,
+          //contact uuid
+          v.contactID,
+          //
+          v.followupDate,
+          v.priority,
+          v.description,
+          null
+        );
+      });
 
       res.send(newContact).status(200);
     } catch (error) {

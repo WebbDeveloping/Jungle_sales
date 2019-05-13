@@ -1,4 +1,4 @@
-[
+{"contacts":[
   {
     "state" : "MA",
     "actions" : [
@@ -626,4 +626,4 @@
     "email" : "info@tetonscience.org",
     "contactID" : "54727AA4-1F76-42D4-8C56-4D54F99E5D71"
   }
-]
+]}
