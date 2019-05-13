@@ -1,0 +1,116 @@
+[
+  {
+    "daysBetweenSteps" : 7,
+    "stepNames" : [
+      {
+        "name" : "New"
+      }
+    ],
+    "actions" : [
+
+    ],
+    "name" : "New Contact",
+    "levelID" : "5F0C8869-768E-4AAA-8CBC-CA51A1A8A81C"
+  },
+  {
+    "daysBetweenSteps" : 7,
+    "stepNames" : [
+      {
+        "name" : "Send first message"
+      },
+      {
+        "name" : "m2"
+      },
+      {
+        "name" : "m3"
+      },
+      {
+        "name" : "m4"
+      }
+    ],
+    "actions" : [
+
+    ],
+    "name" : "Message 2 Message",
+    "levelID" : "B5E404D5-1732-4BF7-BB61-F6CF42275C19"
+  },
+  {
+    "daysBetweenSteps" : 7,
+    "stepNames" : [
+      {
+        "name" : "Make first call"
+      },
+      {
+        "name" : "v2"
+      },
+      {
+        "name" : "v3"
+      },
+      {
+        "name" : "v4"
+      }
+    ],
+    "actions" : [
+
+    ],
+    "name" : "Voice 2 Voice",
+    "levelID" : "2C042EE1-3DD1-4FC9-9157-900500E5A19E"
+  },
+  {
+    "daysBetweenSteps" : 7,
+    "stepNames" : [
+      {
+        "name" : "Meet in person"
+      },
+      {
+        "name" : "f2"
+      },
+      {
+        "name" : "f3"
+      },
+      {  
+        "name" : "f4"
+      }
+    ],
+    "actions" : [
+
+    ],
+    "name" : "Face 2 Face",
+    "levelID" : "DADF5DAA-164E-4C02-BC18-B0C5A4D9F376"
+  },
+  {
+    "daysBetweenSteps" : 7,
+    "stepNames" : [
+      {
+        "name" : "Make a proposal"
+      },
+      {
+        "name" : "p2"
+      },
+      {
+        "name" : "p3"
+      },
+      {
+        "name" : "p4"
+      }
+    ],
+    "actions" : [
+
+    ],
+    "name" : "Proposal",
+    "levelID" : "A7ADF37A-7B16-4B52-98BC-7F2194A431E0"
+  },
+  {
+    "daysBetweenSteps" : 7,
+    "stepNames" : [
+      {
+        "name" : "Contract"
+      }
+    ],
+    "actions" : [
+
+    ],
+    "name" : "Contract",
+    "levelID" : "9C146360-9416-45F8-A12C-8DB7500188BD"
+  }
+]

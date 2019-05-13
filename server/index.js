@@ -62,7 +62,7 @@ app.get('/api/getActionByContactUuid', Cu.getActionByContactUuid);
 app.post(`/api/createContact/:id`, cc.createContact);
 app.post(`/api/postContactList/:id`, cc.postContactList);
 app.post(`/api/createAction`, cc.createAction);
-app.post(`/api/createLevel`, cc.createLevel);
+app.post(`/api/createLevel/:id`, cc.createLevel);
 app.post(`/api/createStep`, cc.createStep);
 
 // https://3556f4c6.ngrok.io/api/postContactList/3

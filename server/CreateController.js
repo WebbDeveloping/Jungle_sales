@@ -25,10 +25,26 @@ let shortList = {
 
 module.exports = {
   createLevel: async (req, res) => {
+    console.log('level hit');
     let { id } = req.params;
     try {
       const db = req.app.get('db');
-      const level = await db.create.createLevel(id);
+      res.set('Content-Type', 'application/json');
+      req.body.levels.forEach((val, i, self) => {
+        const { daysBetweenSteps, stepNames, actions, name, levelID } = val;
+        console.log('val', val);
+        const level = db.create.createLevel(
+          id,
+          name,
+          daysBetweenSteps,
+          levelID
+        );
+        // console.log('level', level);
+        val.stepNames.forEach((v, index, self) => {
+          const { name } = v;
+          const steps = db.create.createSteps(null, name, null, levelID);
+        });
+      });
       res.send(level).status(200);
     } catch (error) {
       res.status(500).send(error);
@@ -99,7 +115,7 @@ module.exports = {
     }
   },
   postContactList: async (req, res) => {
-    console.log('hit list');
+    // console.log('hit list');
     let { id } = req.params;
     try {
       const db = req.app.get('db');
@@ -163,6 +179,7 @@ module.exports = {
           console.log('v', v);
           console.log('index', index);
           console.log('arr', arr);
+          console.log('wut', newContact.contactID);
 
           db.create.createAction(
             null,
