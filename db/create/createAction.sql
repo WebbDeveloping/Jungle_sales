@@ -6,7 +6,8 @@ insert into action(
     follow_up_date,	
     priority,
     description,
-    action_uuid
+    action_uuid,
+    level_uuid
 ) values (
     $1,
     $2,
@@ -15,6 +16,7 @@ insert into action(
     $5,
     $6,
     $7,
-    $8
+    $8,
+    $9
 )
 returning *;

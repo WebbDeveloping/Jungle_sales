@@ -84,6 +84,7 @@ module.exports = {
         lastName
       } = req.body.contact;
       const db = req.app.get('db');
+      console.log(12345, req.body.contact);
 
       const newContact = await db.create.createContact(
         id,
@@ -111,6 +112,7 @@ module.exports = {
         // actions,
       );
       actions.forEach((v, index, arr) => {
+        console.log('vvv', v);
         db.create.createAction(
           null,
           // v.levelID,
@@ -124,7 +126,8 @@ module.exports = {
           v.followupDate,
           v.priority,
           v.description,
-          null
+          null,
+          v.levelID
         );
       });
 
