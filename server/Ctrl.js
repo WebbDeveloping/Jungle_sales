@@ -51,13 +51,21 @@ module.exports = {
       const levelArr = [];
       for (let i = 0; i < allLevel.length; i++) {
         let level = allLevel[i];
-        let getSteps = await db.getStepsForLevel(allLevel[i].level_id);
-        level.stepNames = getSteps;
-        let getActions = await db.getActionForLevel(allLevel[i].level_id);
-        level.actions = getActions;
+        let lid = allLevel[i].level_id;
+        console.log('lid', lid);
+        console.log(1313, level);
+        level.stepNames = [];
+        let getSteps = db.getStepsForLevel(lid);
+
+        level.stepNames.push(getSteps);
+        console.log(level);
+        console.log('levellllll', level);
+        // let getActions = db.getActionForLevel(lid);
+        // console.log('try', getActions);
+        // level.actions = getActions;
         levelArr.push(level);
       }
-      // console.log(levelArr);
+      console.log('levelArr', levelArr);
       res.send(levelArr).status(200);
     } catch (error) {
       console.log(error);

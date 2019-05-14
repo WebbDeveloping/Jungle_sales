@@ -113,8 +113,9 @@ module.exports = {
       );
       actions.forEach((v, index, arr) => {
         console.log('vvv', v);
+        const { level_id } = newContact;
         db.create.createAction(
-          null,
+          level_id,
           // v.levelID,
           // seller id
           id,
@@ -205,8 +206,7 @@ module.exports = {
           console.log('wut', newContact.contactID);
 
           db.create.createAction(
-            null,
-            // v.levelID,
+            newContact.level_id,
             // seller id
             id,
             //contact id

@@ -1,1 +1,3 @@
-select steps_id, step_name, step_uuid from steps where level_id = $1;
+select
+ *
+ from steps where level_id = $1;
