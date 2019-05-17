@@ -1,22 +1,148 @@
 //Create Seller//
 insert into seller (
+seller_uid,
+email,
+password,
+firstName,
+lastName
+) values (
+uuid_generate_v4(),
+'Iven@Remirez.coml',
+'password303',
+'Iven',
+'Remirez'
+);
+
+//Create Contact//
+
+insert into contact(
+contact_uid,
+seller_uid,
+contact_first_name,
+contact_last_name,
+jobTitle,
+companyName,
+website,
+email,
+mobilePhone,
+workPhone,
+Street1,
+Street2,
+City,
+State,
+zipcode,
+birthday,
+linkedin,
+facebook,
+instagram,
+workphoneextenstion
+) values (
+uuid_generate_v4(),
+'3ba0a5db-9c08-48b6-9526-a1e67599e25e',
+'Chloe',
+'Webb',
+'Dope',
+'BabyBLing',
+'BabyBLing.com',
+'Baby@bling.com',
+'8017657637',
+'9812343212',
+'63120 e wood',
+'4125 s 5200 e',
+'Holladay',
+'Utah',
+'84124',
+'12-24-96',
+'linkedin.com',
+'facebook.com',
+'instagram.com',
+801
+);
+
+
+//LEVELS//
+
+insert into level(
+    level_uid,
+    seller_uid,
+    levelName,
+    daysBetweenSteps
+) values (
+    uuid_generate_v4(),
+    '3ba0a5db-9c08-48b6-9526-a1e67599e25e',
+    'message 2 message',
+    3
+)
+
+//Steps//
+-- insert into steps(
+-- steps_uid,
+-- level_uid,
+-- stepname
+-- )values(
+-- uuid_generate_v4(),
+-- '3a4f35ac-c85c-40d9-a925-4eb10a23113e',
+-- 'intro vm/email'
+-- );
+
+
+//Action//
+
+//more actions//
+insert into action(
+    action_uid,
+    level_uid,
+    seller_uid,
+    contact_uid,
+    followupdate,
+    priority,
+    description
+) values (
+uuid_generate_v4(),
+    '3a4f35ac-c85c-40d9-a925-4eb10a23113e',
+    '3ba0a5db-9c08-48b6-9526-a1e67599e25e',
+    'c6f2cd48-b457-4109-9bbb-626dffc783b0',
+    'April 22, 2019',
+    10,
+    'description for Proposal under Matt'
+)
+
+
+
+
+
+
+
+
+
+
+//uuid//
+
+//user//
+// joe dirt// 
+info - 014caf44-b800-4cae-9fd1-0332dbba9878	JoeDirtt	Joe@!dirtt.com	dirtyjoe	Joe	Dirt
+
+insert into seller_t(
+user_id,
 username,
 email,
 password,
 first_name,
 last_name
-) values (
-'username',
-'email',
-'password',
-'first',
-'last'
-)
+) values(
+uuid_generate_v4(),
+'ivenRamirez_test',
+'iven@Ramirez.com',
+'passwordsecurity404',
+'Iven',
+'Ramirez'
+);
 
-//Create Contact//
 
-insert into contact(
-seller_id,
+//contact_t//
+insert into contact_t(
+contact_uid,
+user_id,
 contact_first_name,
 contact_last_name,
 job_title,
@@ -31,71 +157,77 @@ City,
 State,
 zipcode,
 birthday,
-last_contact,
-past_due,
-follow_up_date,
-stage_level
+linkedIn,
+facebook,
+instagram,
+work_phone_extenstion
+
 ) values (
-1,
-'Matt',
+uuid_generate_v4(),
+'014caf44-b800-4cae-9fd1-0332dbba9878',
+'Chloe',
 'Webb',
-'Tech',
-'WebbProduction',
-'WeAreWebb.com',
-'Matt@webb.com',
+'Designer',
+'BabyBling',
+'BabyBLine.com',
+'Baby@Bling.com',
 '8017657637',
 '9812343212',
-'630 e wood',
-'45 s 500 e',
+'12345 e wood',
+'45789 s 50 e',
 'Holladay',
 'Utah',
 '84124',
-'12-24-96',
-'04-1-19',
-1,
-'April 17th 2019',
-1
-)
+'2-14-86',
+'linkedIn.com',
+'facebook.com',
+'instagram.com',
+801
+);
 
 
-//LEVELS//
+// level //
 
-insert into level(
-    seller_id,
-    level_name,
-    days_between_steps int
+insert into level_t(
+level_uid,
+user_id,
+level_name,
+days_between_steps
 ) values (
-    1,
-    'messsage 2 message',
-    3
-)
+uuid_generate_v4(),
+'014caf44-b800-4cae-9fd1-0332dbba9878',
+'Contract',
+2
+);
 
-//Steps//
-insert into steps(
-    level_id,
-    step_name,
-    days_between_steps
-) values (
-    1,
-    'intro vm/email'
-)
+insert into action_t(
+action_uid,
+level_uid,
+user_id,
+contact_uid,
+follow_up_date,
+priority,
+description
+) values(
+uuid_generate_v4(),
+--  level_uid 'New COntact for Joe DIrt'
+'9d64fb19-802c-446a-be45-90a0418b99b5',
+'014caf44-b800-4cae-9fd1-0332dbba9878',
+-- contact_uid for matt
+'ab56cb6a-e2a6-41bd-9b8b-b58b9a204a15',
+122419,
+0,
+'Send a Message'
+);
 
-
-//Action//
-
-//more actions//
-insert into action(
-    level_id,
-    seller_id,
-    contact_id,
-    follow_up_date,
-    priority,
-    description
-) values (
-    4,
-    1,
-    2,
-    'April 22, 2019',
-    10,
-    'description for Proposal under Matt'
+//steps//
+insert into steps_t(
+steps_uid,
+level_uid,
+step_name
+) values(
+uuid_generate_v4(),
+-- level 1 'new contact' user_id joedirt
+'9d64fb19-802c-446a-be45-90a0418b99b5',
+'make first call'
 )

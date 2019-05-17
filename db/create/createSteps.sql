@@ -1,11 +1,9 @@
 insert into steps (
-    level_id,
-    step_name,
-    step_uuid,
-    level_uuid
+    steps_uid,
+    level_uid,
+    stepName
 ) values (
+    uuid_generate_v4(),
     $1,
-    $2,
-    $3,
-    $4
-)
+    $2
+);

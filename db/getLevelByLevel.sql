@@ -8,5 +8,5 @@
 -- join steps st
 -- on st.level_id = l.level_id
 -- where l.level_id = $1;
-select level_id, level_name, days_between_steps, level_uuid from level
-where seller_id = $1;
+select level_uid, level_name, days_between_steps, level_uuid from level
+where seller_uid = $1;

@@ -13,28 +13,27 @@ select all from user where user_id = $1;
 //CONTACT//
 
 create table contact(
-contact_id serial primary key,
-seller_id integer references seller(seller_id),
+contact_uid uuid not null primary key,
+seller_uid uuid references seller(seller_uid),
 contact_first_name varchar,
 contact_last_name varchar,
-job_title varchar,
-company_name varchar,
+jobTitle varchar,
+companyName varchar,
 website varchar,
 email varchar,
-mobile_phone varchar,
-work_phone varchar,
+mobilePhone varchar,
+workPhone varchar,
 Street1 varchar,
 Street2 varchar,
 City text,
 State text,
 zipcode int,
 birthday varchar,
-last_contact varchar,
-past_due int,
-follow_up_date varchar,
-stage_level int,
-priority int
-)
+linkedIn varchar,
+facebook varchar,
+instagram varchar,
+workPhoneExtenstion int
+);
 
 
 initial pyramid
@@ -48,24 +47,24 @@ select * from contact where salesperson_id = $1;
 ////IDEAS//
 //////////////
 
-create table level (
-    level_id serial primary key,
-    seller_id integer references seller(seller_id),
-    level_name varchar,
-    days_between_steps int
+create table level(
+    level_uid uuid primary key,
+    seller_uid uuid references seller(seller_uid),
+    levelName varchar,
+    daysBetweenSteps int
 )
 create table steps(
-    steps_id serial primary key,
-    level_id integer references level(level_id),
-    step_name varchar
+    steps_uid uuid not null primary key,
+    level_uid uuid references level(level_uid),
+    stepName varchar
 )
 
 create table action(
-    action_id serial primary key,
-    level_id integer references level(level_id),
-    seller_id  integer references seller(seller_id),
-    contact_id  integer references contact(contact_id),
-    follow_up_date varchar,
+    action_uid uuid not null primary key,
+    level_uid uuid references level(level_uid),
+    seller_uid  uuid references seller(seller_uid),
+    contact_uid  uuid references contact(contact_uid),
+    followupdate varchar,
     priority int,
     description varchar
 )

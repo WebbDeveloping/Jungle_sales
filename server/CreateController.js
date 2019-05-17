@@ -35,16 +35,17 @@ module.exports = {
         const { daysBetweenSteps, stepNames, actions, name, levelID } = val;
         console.log('val', val);
         const level = db.create.createLevel(
+          levelID,
           id,
           name,
-          daysBetweenSteps,
-          levelID
+          daysBetweenSteps
         );
         anArray.push(level);
-        // console.log('level', level);
+        console.log('level', level);
         val.stepNames.forEach((v, index, self) => {
+          console.log('v', v);
           const { name } = v;
-          const steps = db.create.createSteps(null, name, null, levelID);
+          const steps = db.create.createSteps(levelID, name);
           anArray.push(steps);
         });
       });
@@ -64,7 +65,7 @@ module.exports = {
         street2,
         zip,
         birthday,
-        workPhoneExtension,
+        workphoneextension,
         company,
         contactID,
         facebook,
@@ -87,6 +88,7 @@ module.exports = {
       console.log(12345, req.body.contact);
 
       const newContact = await db.create.createContact(
+        contactID,
         id,
         firstName,
         lastName,
@@ -102,36 +104,26 @@ module.exports = {
         state,
         zip,
         birthday,
-        contactID,
         linkedIn,
         facebook,
         twitter,
         instagram,
-        workPhoneExtension
-        // notes,
-        // actions,
+        workphoneextension
       );
       actions.forEach((v, index, arr) => {
         console.log('vvv', v);
-        const { level_id } = newContact;
-        db.create.createAction(
-          level_id,
-          // v.levelID,
-          // seller id
+        console.log('index', index);
+        console.log('arr', arr);
+        let act = db.create.createAction(
+          v.levelID,
           id,
-          //contact id
-          newContact.contactID,
-          //contact uuid
           v.contactID,
-          //
-          v.followupDate,
+          v.followupdate,
           v.priority,
-          v.description,
-          null,
-          v.levelID
+          v.description
         );
       });
-
+      console.log('newCOntact', newContact);
       res.send(newContact).status(200);
     } catch (error) {
       res.status(500).send(error);
@@ -150,8 +142,8 @@ module.exports = {
       // console.log(22, req.body.contacts);
       req.body.contacts.forEach((val, i, self) => {
         console.log('val', val);
-        console.log('i', i);
-        console.log('self', self);
+        // console.log('i', i);
+        // console.log('self', self);
         const {
           firstName,
           lastName,
@@ -172,9 +164,11 @@ module.exports = {
           facebook,
           twitter,
           instagram,
-          workPhoneExtension
+          workPhoneExtension,
+          actions
         } = val;
         const newContact = db.create.createContactList(
+          contactID,
           id,
           firstName,
           lastName,
@@ -190,20 +184,17 @@ module.exports = {
           state,
           zip,
           birthday,
-          contactID,
           linkedIn,
           facebook,
           twitter,
           instagram,
           workPhoneExtension
-          // notes,
-          // actions,
         );
         val.actions.forEach((v, index, arr) => {
           console.log('v', v);
-          console.log('index', index);
-          console.log('arr', arr);
-          console.log('wut', newContact.contactID);
+          // console.log('index', index);
+          // console.log('arr', arr);
+          // console.log('wut', newContact.contactID);
 
           db.create.createAction(
             newContact.level_id,

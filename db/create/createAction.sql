@@ -1,22 +1,18 @@
 insert into action(
-    level_id,	
-    seller_id,
-    contact_id,
-    contact_uuid,
-    follow_up_date,	
+    action_uid,
+    level_uid,	
+    seller_uid,
+    contact_uid,
+    followupdate,	
     priority,
-    description,
-    action_uuid,
-    level_uuid
+    description
 ) values (
+    uuid_generate_v4(),
     $1,
     $2,
     $3,
     $4,
     $5,
-    $6,
-    $7,
-    $8,
-    $9
+    $6  
 )
 returning *;
