@@ -1,28 +1,3 @@
-let shortList = {
-  linkedIn: '',
-  street2: 'Floor 3',
-  zip: '88888',
-  birthday: '010203',
-  workPhoneExtension: '',
-  company: 'TyndaleApps',
-  contactID: '2A6FD95F-9C00-4936-B926-E851745A7828',
-  facebook: '',
-  city: 'Lehi',
-  mobilePhone: '3335559999',
-  twitter: '',
-  state: 'UT',
-  website: '',
-  email: 'arkin.hill@tyndaleapps.com',
-  jobTitle: 'Boss',
-  firstName: 'Arkin',
-  instagram: '',
-  workPhone: '2224448888',
-  notes: [],
-  actions: [],
-  street1: '123 Dev 456 Mountain',
-  lastName: 'Hill'
-};
-
 module.exports = {
   createLevel: async (req, res) => {
     console.log('level hit');
@@ -131,19 +106,13 @@ module.exports = {
     }
   },
   postContactList: async (req, res) => {
-    // console.log('hit list');
     let { id } = req.params;
     try {
       const db = req.app.get('db');
       res.set('Content-Type', 'application/json');
       const cList = [];
       const actList = [];
-      // console.log(11, req.body);
-      // console.log(22, req.body.contacts);
       req.body.contacts.forEach((val, i, self) => {
-        console.log('val', val);
-        // console.log('i', i);
-        // console.log('self', self);
         const {
           firstName,
           lastName,
@@ -192,34 +161,15 @@ module.exports = {
         );
         val.actions.forEach((v, index, arr) => {
           console.log('v', v);
-          // console.log('index', index);
-          // console.log('arr', arr);
-          // console.log('wut', newContact.contactID);
-
           db.create.createAction(
-            newContact.level_id,
-            // seller id
+            v.levelID,
             id,
-            //contact id
-            newContact.contactID,
-            //contact uuid
             v.contactID,
-            //
             v.followupDate,
             v.priority,
-            v.description,
-            null
+            v.description
           );
         });
-
-        // let newAction = db.create.createAction(
-        //   contactID,
-        //   followupDate,
-        //   description,
-        //   levelID,
-        //   priority
-        // );
-        // console.log('nc', newContact);
         cList.push(newContact);
       });
 

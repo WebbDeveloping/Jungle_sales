@@ -4,7 +4,7 @@ const express = require('express');
 const massive = require('massive');
 const bodyParser = require('body-parser');
 const Ctrl = require('./Ctrl');
-const Cu = require('./Ctrl_uuid');
+// const Cu = require('./Ctrl_uuid');
 const ac = require('./Auth/AuthControl');
 const cc = require('./CreateController');
 //test
@@ -19,14 +19,6 @@ const app = express();
 // });
 const { SERVER_PORT, CONNECTION_STRING } = process.env;
 app.use(bodyParser.json());
-// app.use(
-//   session({
-//     secret: SESSION_SECRET,
-//     resave: false,
-//     saveUninitialized: true
-//   })
-// );
-
 massive(CONNECTION_STRING).then(db => {
   app.set('db', db);
   console.log('Database Connected');
@@ -55,7 +47,7 @@ app.get('/api/getActionContact/:contact_id', Ctrl.getActionForContact);
 //
 // UUID
 //
-app.get('/api/getActionByContactUuid', Cu.getActionByContactUuid);
+// app.get('/api/getActionByContactUuid', Cu.getActionByContactUuid);
 //
 // CREATE
 //
@@ -64,5 +56,3 @@ app.post(`/api/postContactList/:id`, cc.postContactList);
 app.post(`/api/createAction`, cc.createAction);
 app.post(`/api/createLevel/:id`, cc.createLevel);
 app.post(`/api/createStep`, cc.createStep);
-
-// https://3556f4c6.ngrok.io/api/postContactList/3
