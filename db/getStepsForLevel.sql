@@ -1,3 +1,3 @@
 select
  *
- from steps where level_id = $1;
+ from steps where level_uid = $1;

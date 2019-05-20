@@ -1,1 +1,1 @@
-select * from contact where contact_id = $1;
+select * from contact where contact_uid = $1;

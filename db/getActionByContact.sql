@@ -1,2 +1,2 @@
 select * from action
-where contact_id = $1;
+where contact_uid = $1;

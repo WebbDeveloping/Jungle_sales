@@ -6,5 +6,5 @@
 -- on st.level_id = l.level_id
 -- where l.seller_id = $1;
 
-select level_id, level_name,	days_between_steps, level_uuid from level
-where seller_id = $1;
+select level_uid, levelName, daysBetweenSteps from level
+where seller_uid = $1;

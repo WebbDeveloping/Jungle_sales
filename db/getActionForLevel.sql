@@ -8,4 +8,4 @@
 -- action_uuid,
 -- level_uuid
 -- from action where level_uuid = $1;
-select * from action where level_uuid = $1;
+select * from action where level_uid = $1;
