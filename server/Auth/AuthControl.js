@@ -2,26 +2,15 @@ const bcrypt = require('bcryptjs');
 
 module.exports = {
   register: async (req, res) => {
-    const {
-      username,
-      email,
-      password,
-      firstName,
-      lastName,
-      isTeacher
-    } = req.body;
+    const { email, password, firstName, lastName } = req.body;
     const { session } = req;
     const db = req.app.get('db');
 
-    const usernameCheck = await db.auth.getUsernames(username);
+    // const usernameCheck = await db.auth.getUsernames(username);
     const emailCheck = await db.auth.getEmails(email);
 
-    if (usernameCheck.length !== 0 || emailCheck.length !== 0) {
+    if (emailCheck.length !== 0) {
       let errMessages = [];
-
-      if (usernameCheck.length !== 0) {
-        errMessages.push('*Username Already Taken');
-      }
 
       if (emailCheck.length !== 0) {
         errMessages.push('*Email already registered');
@@ -33,14 +22,7 @@ module.exports = {
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(password, salt);
 
-    let newUser = await db.auth.register([
-      username,
-      email,
-      hash,
-      firstName,
-      lastName,
-      isTeacher
-    ]);
+    let newUser = await db.auth.register([email, hash, firstName, lastName]);
     newUser = newUser[0];
 
     delete newUser.password;
@@ -50,15 +32,15 @@ module.exports = {
   },
 
   login: async (req, res) => {
-    const { username, password } = req.body;
+    const { email, password } = req.body;
     const db = req.app.get('db');
     const { session } = req;
 
-    let user = await db.auth.login(username);
+    let user = await db.auth.login(email);
     user = user[0];
 
     if (!user) {
-      return res.status(404).send('*Username/Email does not exist');
+      return res.status(404).send('*Email does not exist');
     }
 
     const foundUser = bcrypt.compareSync(password, user.password);

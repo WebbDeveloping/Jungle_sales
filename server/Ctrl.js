@@ -52,17 +52,9 @@ module.exports = {
       for (let i = 0; i < allLevel.length; i++) {
         let level = allLevel[i];
         let lid = allLevel[i].level_id;
-        console.log('lid', lid);
-        console.log(1313, level);
         level.stepNames = [];
         let getSteps = db.getStepsForLevel(lid);
-
         level.stepNames.push(getSteps);
-        console.log(level);
-        console.log('levellllll', level);
-        // let getActions = db.getActionForLevel(lid);
-        // console.log('try', getActions);
-        // level.actions = getActions;
         levelArr.push(level);
       }
       console.log('levelArr', levelArr);
@@ -113,20 +105,3 @@ module.exports = {
     }
   }
 };
-
-// GetLevelByLevel Endpoint
-// 	http://206.189.218.159:4139/api/getLevelByLevel/1
-// 	http://206.189.218.159:4139/api/createContact/3
-// 	if we could make the /:id be a /:uuid
-
-// GetContactByAction/:uuid
-// 	the uuid would be a contact_uuid that exists on an action
-
-// Authentication
-// 	do we encrypt passwords?
-// 	is there a way to safeguard against hacking our backend?
-// 	industry standard method of protection?
-// 	will https calls eventually be necessary?
-
-// Login
-// 	who sends the "forgot password" email? front or backend

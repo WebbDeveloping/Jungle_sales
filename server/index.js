@@ -1,13 +1,11 @@
 require('dotenv').config();
 const express = require('express');
-// const session = require('express-session');
+const session = require('express-session');
 const massive = require('massive');
 const bodyParser = require('body-parser');
 const Ctrl = require('./Ctrl');
-// const Cu = require('./Ctrl_uuid');
 const ac = require('./Auth/AuthControl');
 const cc = require('./CreateController');
-//test
 const app = express();
 //USE THIS TO SECURE END POINTS
 // app.use(function(req, res, next) {
@@ -26,6 +24,13 @@ massive(CONNECTION_STRING).then(db => {
     console.log(`Server running at ${SERVER_PORT}`);
   });
 });
+app.use(
+  session({
+    secret: SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true
+  })
+);
 //
 // AUTH //
 //
@@ -44,10 +49,6 @@ app.get(`/api/getLevelBySellerId/:id`, Ctrl.levelByLevel);
 app.get(`/api/getLevelBySeller/:id`, Ctrl.levelBySeller);
 app.get('/api/getActionByContact/:id', Ctrl.getActionByContact);
 app.get('/api/getActionContact/:contact_id', Ctrl.getActionForContact);
-//
-// UUID
-//
-// app.get('/api/getActionByContactUuid', Cu.getActionByContactUuid);
 //
 // CREATE
 //
